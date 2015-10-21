@@ -16,4 +16,3 @@
 //= require_tree .
 //= reqire bootstrap
 //= require bootstrap.min
-//= require npm
