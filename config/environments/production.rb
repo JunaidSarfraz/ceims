@@ -85,7 +85,7 @@ Rails.application.configure do
     authentication: "plain",
     enable_starttls_auto: true,
     user_name: "official.ceims@gmail.com",
-    password: "Ceims123.."
+    password: "ceims123.."
   }
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
