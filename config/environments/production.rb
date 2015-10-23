@@ -76,7 +76,7 @@ Rails.application.configure do
   
   config.action_mailer.default_url_options = { host: "ceims.herokuapp.com" }
   config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.perform_deliveries = true
+  # config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address: "smtp.gmail.com",
@@ -84,8 +84,8 @@ Rails.application.configure do
     domain: "www.gmail.com",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: "official.ceims@gmail.com",
-    password: "Ceims123.."
+    user_name: "zaeem@chimpchamp.com",
+    password: "helloworld81"
   }
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
