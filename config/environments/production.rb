@@ -75,13 +75,13 @@ Rails.application.configure do
   config.log_formatter = ::Logger::Formatter.new
   config.action_mailer.default_url_options = { host: 'ceims.herokuapp.com' }
   config.action_mailer.default_url_options = {:host => 'ceims.herokuapp.com', :protocol => 'http'}
-  #config.action_mailer.delivery_method = :smtp
-  #config.action_mailer.raise_delivery_errors = false
-  #config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.perform_deliveries = true
   config.action_mailer.smtp_settings = {
     address: "smtp.gmail.com",
     port: 587,
-    #domain: "www.gmail.com",
+    domain: "www.gmail.com",
     authentication: "plain",
     enable_starttls_auto: true,
     user_name: "official.ceims@gmail.com",
