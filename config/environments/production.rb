@@ -84,8 +84,8 @@ Rails.application.configure do
     domain: "www.gmail.com",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: "zaeem@chimpchamp.com",
-    password: "helloworld81"
+    user_name: "official.ceims@gmail.com",
+    password: "Ceims123.."
   }
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
