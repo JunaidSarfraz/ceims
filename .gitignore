@@ -13,3 +13,4 @@
 /tmp
 # Ignore databse.yml
 /config/database.yml
+/db/schema.rb
