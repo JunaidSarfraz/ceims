@@ -16,12 +16,15 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+# gem 'bootstrap-glyphicons'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+
+
 
 #user signup, login and session management
 gem 'devise'
@@ -45,5 +48,11 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
 end
+
+gem 'font-awesome-rails'
+gem 'therubyracer', '~> 0.12.2'
+gem 'less-rails', '~> 2.7.0' #Sprockets (what rails 3.1 uses for its asset pipeline) supports LESS
+
 
