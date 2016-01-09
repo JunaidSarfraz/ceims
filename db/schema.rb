@@ -66,11 +66,20 @@ ActiveRecord::Schema.define(version: 20160109121400) do
   end
 
   create_table "students", force: :cascade do |t|
-    t.string   "rollno"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "students", ["user_id"], name: "index_students_on_user_id", using: :btree
+
+  create_table "teachers", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "teachers", ["user_id"], name: "index_teachers_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                                default: "", null: false
@@ -89,6 +98,8 @@ ActiveRecord::Schema.define(version: 20160109121400) do
     t.string   "unconfirmed_email"
     t.datetime "created_at",                                        null: false
     t.datetime "updated_at",                                        null: false
+    t.string   "first_name"
+    t.string   "last_name"
     t.string   "name"
     t.integer  "gender"
     t.integer  "blood_group"
@@ -103,4 +114,6 @@ ActiveRecord::Schema.define(version: 20160109121400) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "students", "users"
+  add_foreign_key "teachers", "users"
 end
