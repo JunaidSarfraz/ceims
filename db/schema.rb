@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151219124927) do
+ActiveRecord::Schema.define(version: 20160109121400) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,12 @@ ActiveRecord::Schema.define(version: 20151219124927) do
     t.integer  "user_id"
   end
 
+  create_table "branches", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "contacts", force: :cascade do |t|
     t.string   "name"
     t.string   "number"
@@ -39,32 +45,31 @@ ActiveRecord::Schema.define(version: 20151219124927) do
   end
 
   create_table "employees", force: :cascade do |t|
-    t.string   "name"
-    t.string   "employee_number"
-    t.integer  "gender"
-    t.integer  "blood_group"
-    t.decimal  "height",          precision: 2
-    t.date     "dob"
-    t.integer  "age"
-    t.string   "cnic"
+    t.string   "employment_number"
     t.integer  "_type"
     t.integer  "user_id"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  create_table "owners", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "schools", force: :cascade do |t|
+    t.string   "name"
+    t.text     "vision"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "students", force: :cascade do |t|
-    t.string   "name"
     t.string   "rollno"
-    t.integer  "gender"
-    t.integer  "blood_group"
-    t.decimal  "height",      precision: 2
-    t.date     "dob"
-    t.integer  "age"
-    t.string   "cnic"
     t.integer  "user_id"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -85,7 +90,6 @@ ActiveRecord::Schema.define(version: 20151219124927) do
     t.datetime "created_at",                                        null: false
     t.datetime "updated_at",                                        null: false
     t.string   "name"
-    t.string   "rollno"
     t.integer  "gender"
     t.integer  "blood_group"
     t.decimal  "height",                 precision: 2
@@ -93,7 +97,7 @@ ActiveRecord::Schema.define(version: 20151219124927) do
     t.integer  "age"
     t.string   "cnic"
     t.integer  "_type"
-    t.string   "employee_number"
+    t.integer  "school_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
