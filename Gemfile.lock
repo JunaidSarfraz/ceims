@@ -194,11 +194,8 @@ DEPENDENCIES
   less-rails (~> 2.7.0)
   pg
   rails (= 4.2.4)
-<<<<<<< HEAD
   rails-erd
-=======
   rails_12factor
->>>>>>> devJunaid
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
