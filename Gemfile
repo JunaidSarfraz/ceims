@@ -25,6 +25,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 #user signup, login and session management
 gem 'devise'
+gem "better_errors"
+gem 'rails_12factor' # For better loging of heroku
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
